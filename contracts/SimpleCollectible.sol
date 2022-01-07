@@ -9,6 +9,7 @@ contract SimpleCollectible is ERC721 {
     uint256 public tokenCounter;
 
     constructor () public ERC721("Dogie", "DOG") {
+        tokenCounter = 0;
     }
 
     function createCollectible(string memory tokenURI) public returns(uint256) {
@@ -16,7 +17,7 @@ contract SimpleCollectible is ERC721 {
         _safeMint(msg.sender, newTokenId);
         _setTokenURI(newTokenId, tokenURI);
         tokenCounter += 1;
-        return newtokenId;
+        return newTokenId;
 
     }
 }
