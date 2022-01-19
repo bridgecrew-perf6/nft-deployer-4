@@ -10,7 +10,7 @@ def deploy_and_create():
     simple_collectible = SimpleCollectible.deploy({"from" : account})
     tx = simple_collectible.createCollectible(sample_token_uri, {"from" : account})
     tx.wait(1)
-    print(f"The NFT can be viewed here: {OPENSEA_URL.format(simple_collectible.address, simple_collectible.tokenCounter() - 1)}")
+    print(f"The NFT can be viewed here: {OPENSEA_URL.format(simple_collectible.address, simple_collectible.tokenCounter() - 1)} <--")
     return simple_collectible
     
 def main():
